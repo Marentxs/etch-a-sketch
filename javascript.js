@@ -4,6 +4,8 @@ const grid = document.getElementsByClassName("grid");
 const colorInput = document.getElementById("colorPicker");
 let selectedColor = "#000000ff";
 
+//Color picker
+
 colorInput.addEventListener("input", (event) => {
   selectedColor = event.target.value;
   randomizer = false;
@@ -12,6 +14,11 @@ colorInput.addEventListener("input", (event) => {
 let painting = false;
 
 let rows = 16;
+const cellSize = 22;
+
+container.style.width = `${rows * cellSize}px`;
+
+//Grid generator logic, with functionality for random and painting mode
 
 for (let i = 0; i < rows * rows; i++) {
   const grid = document.createElement("div");
@@ -34,6 +41,8 @@ for (let i = 0; i < rows * rows; i++) {
   container.appendChild(grid);
 }
 
+//Random mode logic
+
 const random = document.getElementById("random");
 
 function getRandomColor() {
@@ -49,11 +58,14 @@ random.addEventListener("click", () => {
   randomizer = !randomizer;
 });
 
+//Clear button logic
+
 const clear = document.getElementById("clear");
 
 clear.addEventListener("click", () => {
-  const grid = document.querySelectorAll(".grid");
-  grid.forEach((grid) => {
+  const grids = document.querySelectorAll(".grid");
+
+  grids.forEach((grid) => {
     grid.style.background = "white";
   });
 });
