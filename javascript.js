@@ -14,7 +14,7 @@ colorInput.addEventListener("input", (event) => {
 let painting = false;
 
 let rows = 16;
-const cellSize = 22;
+const cellSize = 20;
 
 container.style.width = `${rows * cellSize}px`;
 
@@ -68,4 +68,13 @@ clear.addEventListener("click", () => {
   grids.forEach((grid) => {
     grid.style.background = "white";
   });
+});
+
+//Logic for grid size
+
+const size = document.getElementById("size");
+
+size.addEventListener("input", (event) => {
+  rows = event.target.value;
+  document.getElementById("size-value").textContent = event.target.value;
 });
