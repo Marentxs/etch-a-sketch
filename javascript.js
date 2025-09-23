@@ -12,6 +12,16 @@ colorInput.addEventListener("input", (event) => {
 
 let painting = true;
 
+function getRandomColor() {
+  const maxVal = 0xffffff;
+  let randomNumber = Math.floor(Math.random() * maxVal);
+  let hexColor = randomNumber.toString(16);
+  hexColor = hexColor.padStart(6, "0");
+  return `#${hexColor.toUpperCase()}`;
+}
+
+console.log(getRandomColor());
+
 for (let i = 0; i < rows * rows; i++) {
   const grid = document.createElement("div");
   grid.className = "grid";
