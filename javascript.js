@@ -1,8 +1,6 @@
 const container = document.getElementById("container");
 const grid = document.getElementsByClassName("grid");
 
-let rows = 16;
-
 const colorInput = document.getElementById("colorPicker");
 let selectedColor = "#000000ff";
 
@@ -12,6 +10,8 @@ colorInput.addEventListener("input", (event) => {
 });
 
 let painting = false;
+
+let rows = 16;
 
 for (let i = 0; i < rows * rows; i++) {
   const grid = document.createElement("div");
@@ -30,6 +30,7 @@ for (let i = 0; i < rows * rows; i++) {
       }
     }
   });
+
   container.appendChild(grid);
 }
 
@@ -46,4 +47,13 @@ let randomizer = false;
 
 random.addEventListener("click", () => {
   randomizer = !randomizer;
+});
+
+const clear = document.getElementById("clear");
+
+clear.addEventListener("click", () => {
+  const grid = document.querySelectorAll(".grid");
+  grid.forEach((grid) => {
+    grid.style.background = "white";
+  });
 });
