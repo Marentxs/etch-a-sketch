@@ -20,26 +20,35 @@ container.style.width = `${rows * cellSize}px`;
 
 //Grid generator logic, with functionality for random and painting mode
 
-for (let i = 0; i < rows * rows; i++) {
-  const grid = document.createElement("div");
-  grid.className = "grid";
+function createGrid(rows) {
+  container.innerHTML = "";
+  container.style.width = `${rows * cellSize}px`;
 
-  grid.addEventListener("click", () => {
-    painting = !painting;
-  });
+  for (let i = 0; i < rows * rows; i++) {
+    const grid = document.createElement("div");
+    grid.className = "grid";
 
-  grid.addEventListener("mouseover", () => {
-    if (painting) {
-      if (randomizer) {
-        grid.style.backgroundColor = getRandomColor();
-      } else {
-        grid.style.backgroundColor = selectedColor;
+    grid.addEventListener("click", () => {
+      painting = !painting;
+    });
+
+    grid.addEventListener("mouseover", () => {
+      if (painting) {
+        if (randomizer) {
+          grid.style.backgroundColor = getRandomColor();
+        } else {
+          grid.style.backgroundColor = selectedColor;
+        }
       }
-    }
-  });
+    });
 
-  container.appendChild(grid);
+    container.appendChild(grid);
+  }
 }
+
+//Initial grid
+
+createGrid(16);
 
 //Random mode logic
 
@@ -75,6 +84,6 @@ clear.addEventListener("click", () => {
 const size = document.getElementById("size");
 
 size.addEventListener("input", (event) => {
-  rows = event.target.value;
+  createGrid(event.target.value);
   document.getElementById("size-value").textContent = event.target.value;
 });
