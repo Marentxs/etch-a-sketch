@@ -2,7 +2,7 @@ const container = document.getElementById("container");
 const grid = document.getElementsByClassName("grid");
 
 const colorInput = document.getElementById("colorPicker");
-let selectedColor = "#000000ff";
+let selectedColor = "#111111";
 
 //Color picker
 
@@ -76,7 +76,7 @@ clear.addEventListener("click", () => {
   const grids = document.querySelectorAll(".grid");
 
   grids.forEach((grid) => {
-    grid.style.background = "white";
+    grid.style.background = "#f5f5f5";
   });
 });
 

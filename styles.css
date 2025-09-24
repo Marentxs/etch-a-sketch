@@ -7,15 +7,17 @@
 
 html,
 body {
-  background-color: #fdf4e3;
+  background-color: #f5f5f5;
 }
 
 h1 {
   font-size: 75px;
+  color: #111111;
 }
 
 p {
   font-size: 20px;
+  color: #111111;
 }
 
 button,
@@ -29,7 +31,7 @@ input {
 #container {
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid black;
+  border: 1px solid #111111;
   box-sizing: content-box;
 }
 
@@ -74,4 +76,9 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 50%;
   cursor: pointer;
   margin-top: -5px; /* centers thumb on track */
+}
+
+footer {
+  margin-top: auto;
+  font-size: 0.9rem;
 }
