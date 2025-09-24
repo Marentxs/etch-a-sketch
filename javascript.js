@@ -76,7 +76,7 @@ clear.addEventListener("click", () => {
   const grids = document.querySelectorAll(".grid");
 
   grids.forEach((grid) => {
-    grid.style.background = "#f5f5f5";
+    grid.style.backgroundColor = "";
   });
 });
 
