@@ -80,11 +80,15 @@ clear.addEventListener("click", () => {
   });
 });
 
-//Logic for grid size
+//Logic for grid size slider
 
 const size = document.getElementById("size");
+const sizeValue = document.getElementById("size-value");
+sizeValue.textContent = `${size.value} x ${size.value}`;
 
 size.addEventListener("input", (event) => {
   createGrid(event.target.value);
-  document.getElementById("size-value").textContent = event.target.value;
+  document.getElementById(
+    "size-value"
+  ).textContent = `${event.target.value} x ${event.target.value}`;
 });
