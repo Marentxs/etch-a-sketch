@@ -13,20 +13,21 @@ colorInput.addEventListener("input", (event) => {
 
 let painting = false;
 
-let rows = 16;
-const cellSize = 20;
-
-container.style.width = `${rows * cellSize}px`;
-
 //Grid generator logic, with functionality for random and painting mode
 
 function createGrid(rows) {
   container.innerHTML = "";
-  container.style.width = `${rows * cellSize}px`;
+
+  const containerSize = 500;
+  container.style.width = `${containerSize}px`;
+  const cellSize = containerSize / rows;
 
   for (let i = 0; i < rows * rows; i++) {
     const grid = document.createElement("div");
     grid.className = "grid";
+
+    grid.style.width = `${cellSize}px`;
+    grid.style.height = `${cellSize}px`;
 
     grid.addEventListener("click", () => {
       painting = !painting;
