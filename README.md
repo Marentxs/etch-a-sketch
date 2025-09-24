@@ -16,8 +16,10 @@ Clear Button – Reset the grid instantly.
 
 -Built With
 
-HTML5 for structure
+HTML for structure
 
-CSS3 for layout & styling
+CSS for layout & styling
 
-JavaScript (ES6) for interactivity (mainly event listeners and DOM manipulation)
+JavaScript for interactivity (mainly event listeners and DOM manipulation)
+
+Try it here: Etch-a-Sketch Live (https://marentxs.github.io/etch-a-sketch)
