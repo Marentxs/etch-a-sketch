@@ -8,21 +8,18 @@
   <body>
     <h1>Virtual Sketchpad!</h1>
 
-    <p>
-      Click inside the grid to start drawing, you can click again to stop :)
-    </p>
-
-    <label for="colorPicker">Select Color:</label>
-    <input type="color" id="colorPicker" value="#000000ff" />
-
-    <button id="random">Rainbow</button>
-    <button id="clear">Clear</button>
-
-    <input type="range" id="size" name="size" min="16" max="64" value="16" />
-    <span id="size-value"></span>
-    <lable for="range">Pixels</lable>
+    <div id="buttons">
+      <input type="color" id="colorPicker" value="#000000ff" />
+      <button id="random">Randomizer</button>
+      <button id="clear">Clear</button>
+    </div>
 
     <div id="container"></div>
+
+    <div id="slder">
+      <input type="range" id="size" name="size" min="16" max="64" value="16" />
+      <span id="size-value"></span>
+    </div>
 
     <link rel="stylesheet" href="styles.css" />
     <script src="javascript.js"></script>
